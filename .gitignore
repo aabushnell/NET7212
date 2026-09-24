@@ -1,2 +1,13 @@
 
-.direnv/
+*
+!*/
+
+!.gitignore
+
+!flake.lock
+!flake.nix
+
+!*Makefile
+
+!*.c
+!*.h
