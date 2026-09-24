@@ -12,7 +12,7 @@ hello.o: hello.c
 	$(CC) -g -o 1a 1a.o
 
 1a.o: 1a.c
-	$(CC) -c -g -Wall -O0 1a.c
+	$(CC) -c -g -Wall 1a.c
 
 clean:
 	rm -f hello.o hello
