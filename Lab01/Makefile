@@ -26,8 +26,15 @@ hello.o: hello.c
 1c.o: 1c.c
 	$(CC) -c -g -Wall 1c.c
 
+2a: 2a.o
+	$(CC) -g -o 2a 2a.o
+
+2a.o: 2a.c
+	$(CC) -c -g -Wall 2a.c
+
 clean:
 	rm -f hello.o hello
 	rm -f 1a.o 1a
 	rm -f 1b.o 1b
 	rm -f 1c.o 1c
+	rm -f 2a.o 2a
