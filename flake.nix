@@ -22,7 +22,7 @@
         let
           pkgs = nixpkgs.legacyPackages.${system};
           inherit (pkgs.lib) optionals;
-          inherit (pkgs.stdenv) isLinux isDarwin;
+          inherit (pkgs.stdenv.hostPlatform) isLinux isDarwin;
 
           rust = fenix.packages.${system}.stable.toolchain;
         in
