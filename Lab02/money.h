@@ -8,5 +8,6 @@ void money_free(Money *m);
 
 double money_amount(Money *m);
 char *money_currency(Money *m);
+void money_add(Money *m, double amt);
 
 #endif /* MONEY_H */

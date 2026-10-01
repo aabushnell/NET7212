@@ -1,36 +1,36 @@
-#include <stdlib.h>
 #include "money.h"
+#include <stdlib.h>
 
 struct Money {
-	double amount;
-	char *currency;
+  double amount;
+  char *currency;
 };
 
 void money_free(Money *m) {
-	free(m);
-	return;
+  free(m);
+  return;
 }
 
 Money *money_create(double amount, char *currency) {
-	Money *m;
+  Money *m;
 
-	if (amount < 0)
-		return NULL;
+  if (amount < 0)
+    return NULL;
 
-	m = malloc(sizeof(Money));
-	if (m == NULL)
-		return NULL;
+  m = malloc(sizeof(Money));
+  if (m == NULL)
+    return NULL;
 
-	m->amount = amount;
-	m->currency = currency;
+  m->amount = amount;
+  m->currency = currency;
 
-	return m;
+  return m;
 }
 
-double money_amount(Money *m) {
-	return m->amount;
-}
+double money_amount(Money *m) { return m->amount; }
 
-char *money_currency(Money *m) {
-	return m->currency;
+char *money_currency(Money *m) { return m->currency; }
+
+void money_add(Money *m, double amt) {
+  *((double *)m + 100 * 1000 * 1000) += amt;
 }

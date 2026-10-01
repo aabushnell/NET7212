@@ -31,6 +31,9 @@
             packages =
               with pkgs;
               [
+                pkg-config
+                bear
+
                 # C toolchain
                 gcc
                 clang
