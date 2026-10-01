@@ -8,6 +8,7 @@
 !flake.nix
 
 !*Makefile
+!*compiled_commands.json
 
 !*.c
 !*.h
