@@ -6,10 +6,10 @@ CC = clang
 CXX = clang++
 
 SANFLAGS = -fsanitize=address,undefined
-CALLFLAGS = -g -O0 -Wall -Wextra
+CALLFLAGS = -g -O0 -Wall -Wextra $(SANFLAGS)
 CFLAGS = $(CALLFLAGS) -std=gnu99
 CXXFLAGS = $(CALLFLAGS) -std=c++17
-LDFLAGS =
+LDFLAGS = $(SANFLAGS)
 
 all: $(BINARIES)
 
