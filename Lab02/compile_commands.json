@@ -1,0 +1,36 @@
+[
+  {
+    "file": "uppercase.c",
+    "arguments": [
+      "clang",
+      "-g",
+      "-O0",
+      "-Wall",
+      "-Wextra",
+      "-std=gnu99",
+      "-c",
+      "-o",
+      "uppercase.o",
+      "uppercase.c"
+    ],
+    "directory": "/home/aaron/Documents/dev/NET7212/Lab02",
+    "output": "uppercase.o"
+  },
+  {
+    "file": "linkedlist.c",
+    "arguments": [
+      "clang",
+      "-g",
+      "-O0",
+      "-Wall",
+      "-Wextra",
+      "-std=gnu99",
+      "-c",
+      "-o",
+      "linkedlist.o",
+      "linkedlist.c"
+    ],
+    "directory": "/home/aaron/Documents/dev/NET7212/Lab02",
+    "output": "linkedlist.o"
+  }
+]
