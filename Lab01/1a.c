@@ -13,7 +13,7 @@ void fault1(bool enable) {
 
   char *buf = malloc(1 * sizeof(*buf));
 
-  buf[10000000000] = 1;
+  *((char *)buf + 39 * 1000) = 1;
 
   return;
 }
@@ -49,7 +49,7 @@ void fault3(bool enable) {
 int main(int argc, char **argv) {
   printf("Segfaulting...\n");
 
-  fault1(false);
+  fault1(true);
 
   fault2(true);
 
