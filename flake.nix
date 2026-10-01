@@ -33,6 +33,7 @@
               [
                 pkg-config
                 bear
+                hyperfine
 
                 # C toolchain
                 gcc
