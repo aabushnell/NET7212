@@ -1,22 +1,26 @@
+C_BINARIES = uppercase linkedlist
+CXX_BINARIES =
+BINARIES = $(C_BINARIES) $(CXX_BINARIES)
 
-MONEY_FLAGS = -Wall -fprofile-arcs -ftest-coverage
+CC = clang
+CXX = clang++
 
-UP_FLAGS = -g -O0 -Wall -Wextra
+SANFLAGS = -fsanitize=address,undefined
+CALLFLAGS = -g -O0 -Wall -Wextra
+CFLAGS = $(CALLFLAGS) -std=gnu99
+CXXFLAGS = $(CALLFLAGS) -std=c++17
+LDFLAGS =
 
-all: check_money_tiny uppercase
+all: $(BINARIES)
 
-check_money_tiny: check_money_tiny.o money.o
-	gcc $(MONEY_FLAGS) -o check_money_tiny check_money_tiny.o money.o `pkg-config --libs check`
+%.o: %.c
+	$(CC) $(CFLAGS) -c -o $@ $<
 
-check_money_tiny.o: check_money_tiny.c
-	gcc $(MONEY_FLAGS) -c -o check_money_tiny.o check_money_tiny.c
+$(C_BINARIES): %:%.o
+	$(CC) $^ $(LDFLAGS) -o $@
+$(CXX_BINARIES): %:%.o
+	$(CXX) $^ $(LDFLAGS) -o $@
 
-money.o: money.c
-	gcc $(MONEY_FLAGS) -c -o money.o money.c
-
-uppercase: uppercase.c
-	gcc $(UP_FLAGS) -o uppercase uppercase.c
-
+distclean: clean
 clean:
-	rm -f check_money_tiny check_money_tiny.o money.o
-	rm -f uppercase
+	rm -f *.o $(BINARIES)
