@@ -1,4 +1,4 @@
-C_BINARIES = uppercase linkedlist
+C_BINARIES = uppercase linkedlist bracket-parser
 CXX_BINARIES =
 BINARIES = $(C_BINARIES) $(CXX_BINARIES)
 

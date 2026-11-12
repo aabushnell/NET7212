@@ -10,5 +10,12 @@
 !*Makefile
 !*compile_commands.json
 
+!*Cargo.toml
+!*Cargo.lock
+
 !*.c
 !*.h
+
+!*.rs
+
+project/

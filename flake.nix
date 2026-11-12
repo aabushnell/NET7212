@@ -21,7 +21,7 @@
         system:
         let
           pkgs = nixpkgs.legacyPackages.${system};
-          inherit (pkgs.lib) optionals;
+          inherit (pkgs.lib) optionals optionalString;
           inherit (pkgs.stdenv.hostPlatform) isLinux isDarwin;
 
           rust = fenix.packages.${system}.stable.toolchain;
@@ -45,6 +45,9 @@
 
                 # rust
                 rust
+
+                # extra
+                zstd
               ]
               ++ optionals isLinux [
                 gdb
@@ -55,6 +58,14 @@
               ++ optionals isDarwin [
                 lldb
               ];
+
+            shellHook = ''
+              ${optionalString isDarwin ''
+                export RUSTFLAGS="-Clinker=/usr/bin/ld"
+                export LIBCLANG_PATH="${pkgs.llvmPackages.libclang.lib}/lib"
+                export BINDGEN_EXTRA_CLANG_ARGS="$(pkg-config --cflags libzstd)"
+              ''}
+            '';
           };
         }
       );

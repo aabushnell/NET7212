@@ -13,7 +13,7 @@
       "uppercase.o",
       "uppercase.c"
     ],
-    "directory": "/home/aaron/Documents/dev/NET7212/Lab02",
+    "directory": "/Users/aaron/Documents/dev/NET7212/Lab02",
     "output": "uppercase.o"
   },
   {
@@ -30,7 +30,7 @@
       "linkedlist.o",
       "linkedlist.c"
     ],
-    "directory": "/home/aaron/Documents/dev/NET7212/Lab02",
+    "directory": "/Users/aaron/Documents/dev/NET7212/Lab02",
     "output": "linkedlist.o"
   }
 ]
