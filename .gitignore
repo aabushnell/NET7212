@@ -1,21 +1,26 @@
+# ====================================
+#     gitignore - whitelist
+# ====================================
 
 *
 !*/
 
+# -- meta --
 !.gitignore
-
 !flake.lock
 !flake.nix
 
-!*Makefile
-!*compile_commands.json
-
-!*Cargo.toml
+# -- build --
 !*Cargo.lock
+!*Cargo.toml
+!*Makefile
 
+# -- src --
+!*.rs
 !*.c
 !*.h
 
-!*.rs
+!*.json
 
-project/
+# -- overrides --
+*target/
