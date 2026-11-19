@@ -59,7 +59,7 @@ fn count_chars_parallel<S: AsRef<str> + Sync>(input: &[S], n: usize) ->
     // let (tx, rx) = sync_channel(0);
     // would lead to deadlock as recv cannot be called
     // before the end of the scope, which requires threads
-    // to terminate but they are all blocked on send
+    // to terminate but they are all blocked on send!
 
     let chunk_size = input.len().div_ceil(n).max(1);
     thread::scope(|s| {
